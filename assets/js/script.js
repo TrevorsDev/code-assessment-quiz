@@ -40,6 +40,7 @@ let time = 60;
 let index = 0;
 
 startBtn.addEventListener('click', () => {
+  console.log("clicked");
   document.getElementById('start-screen').classList.add('hide');
   timeInterval = setInterval(countdown, 1000),
     timerEl.textContent = time
@@ -84,3 +85,21 @@ function checkAnswer(e) {
     displayQuestion();
   }
 }
+
+function endGame() {
+  document.getElementById('game').classList.add('hide');
+  document.getElementById('end-screen').classList.remove('hide');
+  document.getElementById('save').onclick = saveInitials;
+}
+
+function saveInitials(e) {
+  let highScores = JSON.parse(localStorage.getItem('highScores')) || []
+  const initials = document.getElementById('initials').value;
+  if (initials) {
+    let newScore = {
+      initials, score: time
+    }
+  }
+}
+
+
