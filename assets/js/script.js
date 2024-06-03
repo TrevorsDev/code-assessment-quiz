@@ -32,6 +32,7 @@ const questions = [
     answer: 'console.log',
   },
 ];
+
 const startBtn = document.getElementById('start');
 const timerEl = document.getElementById('timer');
 let timeInterval;
@@ -39,9 +40,9 @@ let time = 60;
 let index = 0;
 
 startBtn.addEventListener('click', () => {
-  document.getElementById('start').classList.add('hide');
+  document.getElementById('start-screen').classList.add('hide');
   timeInterval = setInterval(countdown, 1000),
-  timerEl.textContent = time
+    timerEl.textContent = time
   displayQuestion();
 })
 
@@ -67,4 +68,19 @@ function displayQuestion() {
     btn.onclick = checkAnswer;
     answerEl.append(btn);
   })
+}
+
+function checkAnswer(e) {
+  if (this.textContent !== questions[index].answer) {
+    time -= 10;
+    timerEl.textContent = time;
+  } else {
+    //this else statement will return a response of "correct" or "incorrect", underneath the display of questions, AFTER a user clicks on an answer choice. refer to gif in HW
+  }
+  index++;
+  if (index === questions.length) {
+    endGame();
+  } else {
+    displayQuestion();
+  }
 }
