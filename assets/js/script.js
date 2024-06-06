@@ -51,7 +51,7 @@ function countdown() {
   time--;
   timerEl.textContent = time;
   if (time <= 0) {
-    clearInterval(timeInterval);
+
     timerEl.textContent = 'Time is up!';
     endGame();
   }
@@ -87,6 +87,7 @@ function checkAnswer(e) {
 }
 
 function endGame() {
+  clearInterval(timeInterval);
   document.getElementById('game').classList.add('hide');
   document.getElementById('end-screen').classList.remove('hide');
   document.getElementById('save').onclick = saveInitials;
@@ -99,6 +100,12 @@ function saveInitials(e) {
     let newScore = {
       initials, score: time
     }
+    highScores.push(newScore);
+    localStorage.setItem('highScores', JSON.stringify
+    (highScores));
+    window.location.href = 'scores.html';
+  } else {
+    alert('Please enter your initials')
   }
 }
 
