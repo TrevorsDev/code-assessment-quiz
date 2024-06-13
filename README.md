@@ -17,8 +17,25 @@ There are no steps required to run this project. Viewing the deployed website li
 
 ## App Usage
 Follow the instructions in the description and refer to the pictures below as examples.
-<img src="./assets/img/codingQuiz1.png" alt="Description of Image" width="300" height="400">
-![Start Screen](/assets/img/codingQuiz1.png)
+
+Start Screen:
+
+<img src="./assets/img/codingQuiz1.png" alt="Description of Image" width="376" height="293">
+
+<br>
+Screen demonstrating what it looks like to be running the game:
+
+<img src="./assets/img/codingQuiz2.png" alt="Description of Image" width="376" height="293">
+
+<br>
+End of the game after all questions have been answered. Notice the "8" on the screen. That indicates the amount of time the player had left after the last question was answered:
+
+<img src="./assets/img/codingQuiz3.png" alt="Description of Image" width="376" height="293">
+
+<br>
+Initials and name saved to local storage displaying the scores of each user:
+
+<img src="./assets/img/codingQuiz1.png" alt="Description of Image" width="376" height="293">
 
 ## License
 This project is licensed under the mit.
